@@ -16,7 +16,6 @@ Note: Site is still not fully responsive
 * Pagination
 * Images of animals
 * Backend
-* Fix Search
 * More suggestions are appreciated
 
 
