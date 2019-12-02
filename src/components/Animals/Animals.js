@@ -1,12 +1,18 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Card, Button, CardTitle, CardText } from 'reactstrap';
 import { useSelector,useDispatch } from 'react-redux'
 
 const Animals = () => {
-    const animals = useSelector(state => state.animals)
+    const animals = useSelector(state => state.filteredAnimals)
     const dispatch = useDispatch();
     const deleteAnimal=(payload) =>  dispatch({ type: 'DELETE_ANIMAL',payload :payload })
+    const useMountEffect = (fun) => useEffect(fun, [])
 
+    useMountEffect(()=>{
+         dispatch({ type: 'FETCH_ANIMAL' })
+    }) 
+
+    console.log(animals)
     return (<div style={{marginTop:"40px"}}>
                 <h4>Animal List</h4>
                 {animals.map((item)=>(

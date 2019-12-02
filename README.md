@@ -10,8 +10,6 @@ Note: Site is still not fully responsive
 * Animal Component contains the list of the cards and the controller can be used to insert a new animal or search a specific animal
 * Animal and Controller is bootstrapped in layout which was usually not necessary in here but is useful when you have multiple pages. I am used to this structure so i have used it but you may remove it if you want and move navbar code to app.
 
-NOTE :: I realized it later that instead of search i implemented inverse delete which was not really my intention, due to lack of time i could not completely implement it.
-
 ## Future Improvements
 
 * Update

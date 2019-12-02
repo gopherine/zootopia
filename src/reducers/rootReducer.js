@@ -18,28 +18,33 @@ const initialState = {
                     date:new Date('December 1, 2019 11:20:25'),
                     cycle:3
                 },
-            ]
+            ],
+
+    filteredAnimals:[]
 }
 export const store = createStore(rootReducer,initialState)
 
 function rootReducer(state= initialState, {type,payload}) {
     switch(type){
+        case 'FETCH_ANIMAL':
+            return { ...state, animals:[...state.animals],filteredAnimals:[...state.animals]}
         case 'INSERT_ANIMAL':
-            return { ...state,
-                    animals:[...state.animals,payload]}
+            return { ...state,animals:[...state.animals,payload],filteredAnimals:[...state.animals,payload]}
         case 'DELETE_ANIMAL':
             state.animals = state.animals.filter(function(returnableObjects){
                     return returnableObjects.name !== payload;
              });
-            return {...state, animals:state.animals}
+            return {...state, animals:state.animals, filteredAnimals:state.animals}
         case 'SEARCH_ANIMAL':
-             if (payload===undefined) {
-                 return state
-             }
-             state.animals = state.animals.filter(function(returnableObjects){
-                return returnableObjects.name === payload;
+             state.filteredAnimals = state.animals.filter(function(returnableObjects){
+                 if(payload === void(0)|| payload === ""){
+                     console.log(payload)
+                    return returnableObjects
+                 }
+                 console.log(payload)
+                 return returnableObjects.name === payload;
              });
-             return {...state, animals:state.animals}
+             return {...state,animals:[...state.animals], filteredAnimals:[...state.filteredAnimals]}
         default:
             return state;
     }

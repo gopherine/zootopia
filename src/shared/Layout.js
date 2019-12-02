@@ -22,7 +22,7 @@ const Layout = ({children}) => {
             </Container>
             <footer> 
             <div>
-                Designed by Atharva <a href="https://github.com/gopherine" title="Gopherine">Gopherine</a> 
+                Designed by <a href="https://github.com/gopherine" title="Gopherine">Gopherine</a> &nbsp;
                 Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>   
             </footer>
         </React.Fragment>

@@ -51,7 +51,7 @@ const Controller = () => {
                     <Label for="cycle">Checkup Cycle</Label>
                     <Input onChange={onChange} type="select" name="cycle" id="cycle">
                         <option value={1}>1 Month</option>
-                        <option value={2}>3 Month</option>
+                        <option value={3}>3 Month</option>
                     </Input>
                 </FormGroup>
                 </Col>
